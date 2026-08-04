@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eruin - AI-Powered Narrative RPG | Where Every Voice Matters</title>
-<meta name="description" content="A story-driven fantasy RPG where NPCs run on local AI. Speak with your own voice, be remembered, and watch quests and the world change. Wishlist on Steam.">
-<meta property="og:title" content="Eruin - Where Every Voice Matters">
-<meta property="og:description" content="A story-driven fantasy RPG where NPCs run on local AI. Speak with your own voice, be remembered, and watch quests and the world change.">
+<title>Eruin - A Voice-First Fantasy Mystery RPG</title>
+<meta name="description" content="Eruin is a voice-first fantasy mystery RPG where you speak naturally to AI-driven characters, investigate a town stripped of its memories, and experience handcrafted consequences powered by local, offline AI.">
+<meta property="og:title" content="Eruin - Everyone Has Forgotten. Including You.">
+<meta property="og:description" content="A voice-first fantasy mystery RPG. Wake without a name in a town stripped of its memories, speak naturally to its inhabitants, and unravel the spell. Wishlist on Steam.">
 <meta property="og:image" content="https://www.eruin.dev/library_header_920x430_square_corners.png">
 <meta property="og:url" content="https://www.eruin.dev/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Eruin - Where Every Voice Matters">
-<meta name="twitter:description" content="A story-driven fantasy RPG where NPCs run on local AI. Speak with your own voice, be remembered, and watch quests and the world change.">
+<meta name="twitter:title" content="Eruin - Everyone Has Forgotten. Including You.">
+<meta name="twitter:description" content="A voice-first fantasy mystery RPG. Wake without a name in a town stripped of its memories, speak naturally to its inhabitants, and unravel the spell. Wishlist on Steam.">
 <meta name="twitter:image" content="https://www.eruin.dev/library_header_920x430_square_corners.png">
 <meta name="theme-color" content="#0b0611">
 <link rel="canonical" href="https://www.eruin.dev/">
@@ -28,8 +28,8 @@
   "name": "Eruin",
   "url": "https://www.eruin.dev/",
   "image": "https://www.eruin.dev/library_header_920x430_square_corners.png",
-  "description": "A story-driven fantasy RPG where NPCs run on local AI. Speak with your own voice, be remembered, and watch quests and the world change around you.",
-  "genre": ["Role-playing game", "Adventure"],
+  "description": "Eruin is a voice-first fantasy mystery RPG where you speak naturally to AI-driven characters, investigate a town stripped of its memories, and experience handcrafted consequences powered by local, offline AI.",
+  "genre": ["Adventure", "Role-playing game", "Mystery", "Interactive Fiction"],
   "gamePlatform": "PC",
   "playMode": "SinglePlayer",
   "author": { "@type": "Organization", "name": "Eruin" },
@@ -281,7 +281,7 @@ section { position: relative; }
 .pitch .rune-row { margin-bottom: 2rem; }
 .pitch .rune-line { width: 60px; flex: none; }
 
-/* ═══ LIVING NPCs ═══ */
+/* ═══ LIVING DIALOGUE ═══ */
 .living {
   padding: 8rem clamp(1.2rem, 4vw, 2.6rem);
   background: radial-gradient(ellipse 80% 60% at 80% 20%, rgba(139,92,246,.09), transparent 60%), var(--night);
@@ -415,6 +415,18 @@ section { position: relative; }
 .loop-step.gold .v { color: #f3ecd6; }
 .loop-arrow { display: flex; align-items: center; color: var(--accent-glow); font-size: 1.4rem; }
 
+/* ═══ FAILURE ═══ */
+.fail {
+  padding: 8rem clamp(1.2rem, 4vw, 2.6rem);
+  background: radial-gradient(ellipse 80% 60% at 15% 80%, rgba(139,92,246,.08), transparent 60%), var(--night);
+}
+.fail-img {
+  border-radius: 8px; overflow: hidden;
+  border: 1px solid rgba(139,92,246,.16);
+  box-shadow: 0 30px 90px rgba(0,0,0,.55), 0 0 60px rgba(139,92,246,.06);
+}
+.fail-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
 /* ═══ TRAILER ═══ */
 .trailer {
   padding: 8rem clamp(1.2rem, 4vw, 2.6rem); text-align: center;
@@ -519,7 +531,7 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
 
 /* ═══ RESPONSIVE ═══ */
 @media (max-width: 900px) {
-  .living, .pillars, .trailer, .world, .lore, .cta { padding-top: 5rem; padding-bottom: 5rem; }
+  .living, .pillars, .trailer, .world, .lore, .cta, .fail { padding-top: 5rem; padding-bottom: 5rem; }
   .shots-grid { grid-template-columns: 1fr; }
   .shot.wide { grid-column: auto; aspect-ratio: 16/9; }
 }
@@ -541,7 +553,7 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
   <a href="#top" class="nav-wordmark">ERUIN</a>
   <div class="nav-right">
     <span class="nav-links">
-      <a href="#living" class="nav-link">Living NPCs</a>
+      <a href="#living" class="nav-link">Dialogue</a>
       <a href="#pillars" class="nav-link" style="margin-left:2rem;">Features</a>
       <a href="#world" class="nav-link" style="margin-left:2rem;">The World</a>
       <a href="#trailer" class="nav-link" style="margin-left:2rem;">Trailer</a>
@@ -559,10 +571,10 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
   <div class="particles" id="particles"></div>
 
   <div class="hero-content">
-    <div class="hero-kicker">A Narrative RPG Powered by Living AI</div>
+    <div class="hero-kicker">A Voice-First Fantasy Mystery &middot; Powered by Local AI</div>
     <h1 style="line-height:1;"><img src="eruin-logo.webp" alt="Eruin" width="1280" height="720" fetchpriority="high" class="logo-img"></h1>
-    <p class="tagline">Where Every Voice Matters</p>
-    <p class="hero-sub">Speak aloud to NPCs driven by local AI. They remember, they decide, and they reshape the quests and the world around you.</p>
+    <p class="tagline">Everyone Has Forgotten. Including You.</p>
+    <p class="hero-sub">Wake without a name in a town stripped of its memories. Speak naturally to its inhabitants, unravel the spell, and discover why this forgotten kingdom seems to know you.</p>
     <div class="hero-cta">
       <a href="https://store.steampowered.com/app/4695190/Eruin/" target="_blank" rel="noopener" class="btn-gold">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -586,23 +598,23 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
       <span class="rune-diamond"></span>
       <span class="rune-line r" style="width:60px;flex:none;"></span>
     </div>
-    <h2 class="reveal">Every villager is a mind of their own.</h2>
-    <p class="reveal">No dialogue trees. No canned lines. In Eruin, you <span class="hl">talk</span>, and the world talks back, then quietly rewrites itself around what was said.</p>
+    <h2 class="reveal">A spell took every memory in town. Yours included.</h2>
+    <p class="reveal">No name, no past, no explanation — only a walled town of strangers who <span class="hl">seem to know you</span>. Ask the right questions, and the past starts answering back.</p>
   </div>
 </section>
 
-<!-- ═══ LIVING NPCs ═══ -->
+<!-- ═══ LIVING DIALOGUE ═══ -->
 <section class="living" id="living">
   <div class="living-grid">
     <div>
-      <div class="eyebrow reveal">The Living World</div>
-      <h2 class="display reveal">NPCs that think, remember,<br>and drive the game itself</h2>
-      <p class="body-p reveal">Every character runs on <span class="hl">local AI</span>, each with their own personality, their own knowledge, their own memory of you. Speak with your real voice and they answer unscripted.</p>
-      <p class="body-p reveal" style="margin-bottom:2.2rem;">And they don't just chat. What you say moves the story: quests open and change, dispositions shift, and the world state updates from the conversation you just had.</p>
+      <div class="eyebrow reveal">Speak, Don't Select</div>
+      <h2 class="display reveal">Characters that listen,<br>remember, and talk back</h2>
+      <p class="body-p reveal">Key characters are driven by <span class="hl">local AI</span> — each with their own personality, knowledge, and memory of you. Talk with your real voice or type, in your own words. No dialogue wheel, no picking from a list.</p>
+      <p class="body-p reveal" style="margin-bottom:2.2rem;">And conversations stay in the world. Nothing pauses: move around, interrupt, hesitate, or walk away mid-sentence — and characters can react to that. What you say — promises, contradictions, how you treat them — shapes relationships, quest progress, and what comes next.</p>
       <div class="living-stats reveal">
-        <div><div class="stat-num">Local</div><div class="stat-label">Runs on your machine</div></div>
-        <div><div class="stat-num">Zero</div><div class="stat-label">Scripted dialogue trees</div></div>
-        <div><div class="stat-num">Endless</div><div class="stat-label">Ways a scene can go</div></div>
+        <div><div class="stat-num">Local</div><div class="stat-label">AI runs on your machine</div></div>
+        <div><div class="stat-num">Voice</div><div class="stat-label">Speak or type your words</div></div>
+        <div><div class="stat-num">Live</div><div class="stat-label">Dialogue never pauses the world</div></div>
       </div>
     </div>
 
@@ -617,28 +629,26 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
           <div class="convo-status"><span class="dot"></span>Listening</div>
         </div>
         <div class="convo-body">
-          <div class="bubble-npc">You carry the Veil's mark, stranger. I wondered when it would find someone... willing to <em>listen</em>.</div>
           <div class="bubble-you">
             <div class="you-meta">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
               <div class="wavebars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
               <span class="you-tag">Your voice</span>
             </div>
-            <div class="you-text">"What is the Veil, and why did it choose me?"</div>
+            <div class="you-text">"Alder sent me. He said you could prove I belong here."</div>
           </div>
-          <div class="bubble-npc">Sit. I'll tell you what the elders won't. But first, walk the lantern path east. I've lit the way. Prove you can be trusted with the truth.</div>
+          <div class="bubble-npc">Alder says many things when he wants someone else to solve his problems. Very well — answer my riddle, and we shall see where you belong.</div>
         </div>
         <div class="reacts">
           <div class="reacts-label">The world reacts</div>
           <div class="chips">
-            <span class="chip">◇ Memory saved</span>
-            <span class="chip">◇ Quest opened: The Veil's Purpose</span>
-            <span class="chip">◇ Disposition: Wary → Curious</span>
-            <span class="chip">◇ World: Lantern path revealed</span>
+            <span class="chip">◇ Morrin remembers: Alder sent you</span>
+            <span class="chip">◇ Disposition: Wary → Amused</span>
+            <span class="chip">◇ The trial begins</span>
           </div>
         </div>
       </div>
-      <p class="convo-note">A representative exchange. No two players will hear the same words.</p>
+      <p class="convo-note">From Act 1 of the demo. Morrin's replies are AI-driven; her trial is authored by hand.</p>
     </div>
   </div>
 </section>
@@ -656,24 +666,48 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
         <div class="p-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
         </div>
-        <h3>Voice-Driven Conversations</h3>
-        <p>Speak naturally to any NPC with your microphone. Real-time speech recognition and text-to-speech make every dialogue feel alive.</p>
+        <h3>Speak, Don't Select</h3>
+        <p>Talk naturally using your microphone, or type if you prefer. AI-driven characters understand your own words — no dialogue wheel forcing your hand.</p>
       </div>
       <div class="pillar reveal">
         <div class="numeral">II</div>
         <div class="p-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/><path d="M8 12a4 4 0 0 1 8 0"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5 9 2 12 5 15"/><polyline points="9 5 12 2 15 5"/><polyline points="15 19 12 22 9 19"/><polyline points="19 9 22 12 19 15"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
         </div>
-        <h3>Memory That Shapes State</h3>
-        <p>NPCs remember what you told them and act on it: opening quests, changing dispositions, and updating world state from your words.</p>
+        <h3>Conversations Stay in the World</h3>
+        <p>Dialogue never locks you into a menu. Move around, interrupt, hesitate, or simply walk away while someone is talking — and characters can react to that.</p>
       </div>
       <div class="pillar reveal">
         <div class="numeral">III</div>
         <div class="p-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+        </div>
+        <h3>Your Words Have Consequences</h3>
+        <p>Characters remember important interactions — promises, contradictions, how you treated them. What you say shapes relationships, quest progress, and what doors open for you.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="numeral">IV</div>
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
+        </div>
+        <h3>Restore What Was Forgotten</h3>
+        <p>The town has lost its memories. Question its inhabitants, notice what doesn't add up, and recover fragments of the past to understand the spell — and your connection to the kingdom.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="numeral">V</div>
+        <div class="p-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
-        <h3>A Handcrafted Fantasy</h3>
-        <p>A lovingly built world of quests, lore, and mysteries, not procedural filler. AI enriches the story; it never replaces the storytelling.</p>
+        <h3>Handcrafted Story, Living Dialogue</h3>
+        <p>The world, characters, mystery, trials, and consequences are authored by hand. Local AI lets key characters understand your words and respond within the designed story.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="numeral">VI</div>
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Private and Local</h3>
+        <p>Speech recognition, AI dialogue, and character voices run locally on your computer. No cloud processing, no account, no subscription.</p>
       </div>
     </div>
   </div>
@@ -683,11 +717,26 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
 <section class="loop">
   <h2 class="reveal">One conversation. A chain of consequence.</h2>
   <div class="loop-row reveal">
-    <div class="loop-step"><div class="k">Step One</div><div class="v">You speak aloud</div></div>
+    <div class="loop-step"><div class="k">Step One</div><div class="v">You speak in your own words</div></div>
     <div class="loop-arrow">→</div>
-    <div class="loop-step"><div class="k">Step Two</div><div class="v">The NPC reasons &amp; remembers</div></div>
+    <div class="loop-step"><div class="k">Step Two</div><div class="v">The character understands &amp; remembers</div></div>
     <div class="loop-arrow">→</div>
-    <div class="loop-step gold"><div class="k">Step Three</div><div class="v">Quests &amp; world state change</div></div>
+    <div class="loop-step gold"><div class="k">Step Three</div><div class="v">Relationships &amp; quests move forward</div></div>
+  </div>
+</section>
+
+<!-- ═══ FAILURE ═══ -->
+<section class="fail">
+  <div class="living-grid">
+    <div class="fail-img reveal">
+      <img src="lake.webp" alt="The player stands at the edge of a dark lake beneath a storm-lit purple sky" width="2557" height="1393" loading="lazy" decoding="async">
+    </div>
+    <div>
+      <div class="eyebrow reveal">No Dead Ends</div>
+      <h2 class="display reveal" style="font-size:clamp(2rem,4.4vw,3.1rem);margin-bottom:1.6rem;">Failure is still gameplay</h2>
+      <p class="body-p reveal" style="font-size:1.18rem;line-height:1.85;color:rgba(208,196,224,.82);margin-bottom:1.3rem;">Fail Morrin's trial and she may turn you into a frog. That is not a game over — it is the beginning of another playable sequence, down at the lake below her woods.</p>
+      <p class="body-p reveal" style="font-size:1.18rem;line-height:1.85;color:rgba(208,196,224,.82);">When you find your way back, you can try a different approach. In Eruin, a conversation gone wrong changes the adventure instead of ending it.</p>
+    </div>
   </div>
 </section>
 
@@ -716,16 +765,24 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
     </div>
     <div class="shots-grid">
       <div class="shot wide reveal">
-        <img src="MainMenuBg.webp" alt="A mysterious path through an enchanted purple forest lit by ancient lanterns" width="1672" height="941" loading="lazy" decoding="async">
-        <div class="cap">The Enchanted Forest, a path lit by lanterns of forgotten make</div>
+        <img src="morrin-path.webp" alt="The player stands on a lantern-lit forest road beneath a churning purple storm" width="2497" height="1224" loading="lazy" decoding="async">
+        <div class="cap">The forest road, where a witch named Morrin is said to dwell</div>
       </div>
       <div class="shot reveal">
-        <img src="cityGates.webp" alt="A traveler approaches the fortified city gates under a violet sky" width="2559" height="1390" loading="lazy" decoding="async">
-        <div class="cap">The City Gates, where the walls of Eruin rise against twilight</div>
+        <img src="cityGates.webp" alt="A traveler approaches the fortified town gates under a violet sky" width="2559" height="1390" loading="lazy" decoding="async">
+        <div class="cap">The gates of the town, where Alder decides who may enter</div>
       </div>
       <div class="shot reveal">
-        <img src="start-level.webp" alt="A figure stands beneath a great tree under a violet moonlit sky" width="2554" height="1392" loading="lazy" decoding="async">
-        <div class="cap">The Awakening, your journey begins beneath strange skies</div>
+        <img src="towers.webp" alt="Lantern-topped towers line the brick wall of the town at dusk" width="2556" height="1389" loading="lazy" decoding="async">
+        <div class="cap">Lantern towers along the wall, keeping watch over the forgetting</div>
+      </div>
+      <div class="shot reveal">
+        <img src="start-level.webp" alt="The player wakes on a night-time forest path as a glowing wisp hovers beside a carved tree" width="2554" height="1392" loading="lazy" decoding="async">
+        <div class="cap">Waking without a name, the Guiding Light hovering close by</div>
+      </div>
+      <div class="shot reveal">
+        <img src="lake2.webp" alt="The player stands in a grassy meadow by a lakeshore beneath a magenta sky" width="2557" height="1393" loading="lazy" decoding="async">
+        <div class="cap">The meadow by the lake, quiet in the storm's strange light</div>
       </div>
     </div>
   </div>
@@ -739,8 +796,8 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
       <span class="rune-diamond"></span>
       <span class="rune-line r"></span>
     </div>
-    <blockquote>You are not from this world. The Veil brought you here for a reason, though even the oldest among us cannot say why. Tread carefully, stranger. In Eruin, words carry more weight than swords.</blockquote>
-    <p class="lore-attr">Morrin, Witch of the Forest</p>
+    <blockquote>Forgive me, stranger. I cannot tell you my own mother's name, let alone yours. And yet your face... I feel I ought to know it.</blockquote>
+    <p class="lore-attr">Alder, Keeper of the Gate</p>
     <div class="rune-row">
       <span class="rune-line l"></span>
       <span class="rune-diamond"></span>
@@ -777,8 +834,6 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
   <nav class="footer-links">
     <a href="https://store.steampowered.com/app/4695190/Eruin/" target="_blank" rel="noopener">Steam</a>
     <a href="https://discord.gg/JYqdYUT4u7" target="_blank" rel="noopener">Discord</a>
-    <a href="#">Press Kit</a>
-    <a href="#">Contact</a>
   </nav>
   <p class="footer-copy">&copy; 2026 Eruin. All rights reserved.</p>
 </footer>
