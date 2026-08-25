@@ -37,6 +37,15 @@
   "gamePlatform": "PC",
   "playMode": "SinglePlayer",
   "author": { "@type": "Organization", "name": "Eruin" },
+  "trailer": {
+    "@type": "VideoObject",
+    "name": "Eruin Official Trailer",
+    "description": "Speak. They answer. The official trailer for Eruin, the voice-first fantasy mystery RPG powered by local AI.",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/uMLSxeFwD-Y",
+    "contentUrl": "https://youtu.be/uMLSxeFwD-Y",
+    "thumbnailUrl": "https://i.ytimg.com/vi/uMLSxeFwD-Y/maxresdefault.jpg",
+    "uploadDate": "2026-08-25"
+  },
   "sameAs": [
     "https://store.steampowered.com/app/4695190/Eruin/",
     "https://discord.gg/JYqdYUT4u7"
@@ -594,6 +603,18 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
   <div class="scroll-hint"><div class="scroll-hint-inner"></div></div>
 </section>
 
+<!-- ═══ TRAILER (front and center, muted autoplay) ═══ -->
+<section class="trailer" id="trailer" style="padding-top:5.5rem;">
+  <div class="section-head reveal">
+    <div class="eyebrow">Watch</div>
+    <h2 class="display">Official Trailer</h2>
+  </div>
+  <div class="trailer-box reveal" style="max-width:1100px;">
+    <iframe src="https://www.youtube-nocookie.com/embed/uMLSxeFwD-Y?autoplay=1&mute=1&loop=1&playlist=uMLSxeFwD-Y&rel=0" title="Eruin Official Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>
+  </div>
+  <p style="margin-top:1.1rem;font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(208,196,224,.45);">Playing muted &middot; tap the video for sound</p>
+</section>
+
 <!-- ═══ PITCH ═══ -->
 <section class="pitch">
   <div class="pitch-inner">
@@ -740,22 +761,6 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
       <h2 class="display reveal" style="font-size:clamp(2rem,4.4vw,3.1rem);margin-bottom:1.6rem;">Failure is still gameplay</h2>
       <p class="body-p reveal" style="font-size:1.18rem;line-height:1.85;color:rgba(208,196,224,.82);margin-bottom:1.3rem;">Fail Morrin's trial and she may turn you into a frog. That is not a game over — it is the beginning of another playable sequence, down at the lake below her woods.</p>
       <p class="body-p reveal" style="font-size:1.18rem;line-height:1.85;color:rgba(208,196,224,.82);">When you find your way back, you can try a different approach. In Eruin, a conversation gone wrong changes the adventure instead of ending it.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ TRAILER ═══ -->
-<section class="trailer" id="trailer">
-  <div class="section-head reveal">
-    <div class="eyebrow">Watch</div>
-    <h2 class="display">Official Trailer</h2>
-  </div>
-  <div class="trailer-box reveal">
-    <div class="trailer-placeholder" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/cnKq-SuuIuY?autoplay=1&rel=0\' title=\'Eruin Official Trailer\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:none;\'></iframe>'">
-      <div class="play-circle">
-        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-      </div>
-      <span class="play-label">Play Trailer</span>
     </div>
   </div>
 </section>
