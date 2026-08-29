@@ -1,0 +1,7 @@
+.vercel
+
+# Local game assets / working files, not part of the website
+GameAssets/
+CapsuleArt/
+thumbnail.png
+voiceAction.mp4
