@@ -7,6 +7,13 @@
   <description>Tech devlogs from the making of Eruin, a voice-first fantasy mystery RPG powered by local AI.</description>
   <language>en</language>
   <item>
+    <title>Testing a Game You Talk To</title>
+    <link>https://www.eruin.dev/devlog/testing-a-game-you-talk-to/</link>
+    <guid isPermaLink="true">https://www.eruin.dev/devlog/testing-a-game-you-talk-to/</guid>
+    <pubDate>Sat, 29 Aug 2026 12:00:00 GMT</pubDate>
+    <description>How do you QA a game where every conversation is different? Real numbers from Eruin's speech, retrieval and quest-signal test harnesses.</description>
+  </item>
+  <item>
     <title>Welcome to the Eruin Devlog</title>
     <link>https://www.eruin.dev/devlog/welcome-to-the-devlog/</link>
     <guid isPermaLink="true">https://www.eruin.dev/devlog/welcome-to-the-devlog/</guid>
