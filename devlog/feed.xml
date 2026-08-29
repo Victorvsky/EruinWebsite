@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Eruin Devlog</title>
+  <link>https://www.eruin.dev/devlog/</link>
+  <atom:link href="https://www.eruin.dev/devlog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Tech devlogs from the making of Eruin, a voice-first fantasy mystery RPG powered by local AI.</description>
+  <language>en</language>
+  <item>
+    <title>Welcome to the Eruin Devlog</title>
+    <link>https://www.eruin.dev/devlog/welcome-to-the-devlog/</link>
+    <guid isPermaLink="true">https://www.eruin.dev/devlog/welcome-to-the-devlog/</guid>
+    <pubDate>Sat, 29 Aug 2026 12:00:00 GMT</pubDate>
+    <description>Why we're opening the workshop doors, and what we'll be writing about as Eruin heads toward its demo.</description>
+  </item>
+</channel>
+</rss>
