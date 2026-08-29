@@ -151,6 +151,22 @@ article code { font-family: 'Consolas', 'Menlo', monospace; font-size: .86em;
 .codebox pre { padding: 1.4rem 1.3rem; overflow-x: auto; }
 .codebox code { font-family: 'Consolas', 'Menlo', monospace; font-size: .88rem; line-height: 1.65;
   background: none; border: none; padding: 0; color: #cfc3e8; }
+.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.8rem 0;
+  border: 1px solid rgba(139,92,246,.22); border-radius: 8px;
+  background: linear-gradient(160deg, rgba(24,16,42,.6), rgba(12,8,22,.8));
+  box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+article table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 1rem; line-height: 1.55; }
+article th { font-family: 'Cinzel', serif; font-weight: 600; font-size: .68rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent-glow); text-align: left; white-space: nowrap;
+  padding: .85rem 1.1rem; background: rgba(224,178,74,.06); border-bottom: 1px solid rgba(224,178,74,.3); }
+article td { padding: .75rem 1.1rem; vertical-align: top; color: rgba(224,215,242,.85);
+  border-bottom: 1px solid rgba(139,92,246,.12); }
+article td:first-child { color: var(--moonlight); }
+article tbody tr:last-child td { border-bottom: none; }
+@media (max-width: 640px) {
+  article table { font-size: .92rem; }
+  article th, article td { padding: .6rem .8rem; }
+}
 .pager { max-width: 720px; margin: 0 auto; padding: 0 clamp(1.2rem, 4vw, 2rem) 3rem;
   display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
 .pager-link { display: flex; flex-direction: column; gap: .4rem; max-width: 46%; }
@@ -200,15 +216,15 @@ article code { font-family: 'Consolas', 'Menlo', monospace; font-size: .86em;
 <p>What we can do is pin down every stage around the model, and measure the model itself statistically. Today we ran the full offline test battery and we want to share the actual numbers, including the ones that aren't flattering.</p>
 <h2>The pipeline, timed</h2>
 <p>Everything runs locally, in-process: whisper.cpp turns your voice into text, a llama.cpp model answers in character, Kokoro speaks the reply. On our dev machine (RTX 4090), from the moment you release push-to-talk:</p>
-<p>| Stage | Time since mic stop | |---|---| | Speech-to-text done | ~0.52 s | | LLM reply done | ~1.4 to 1.7 s | | NPC audio playing | ~1.8 to 2.4 s |</p>
+<div class="tablewrap"><table><thead><tr><th>Stage</th><th>Time since mic stop</th></tr></thead><tbody><tr><td>Speech-to-text done</td><td>~0.52 s</td></tr><tr><td>LLM reply done</td><td>~1.4 to 1.7 s</td></tr><tr><td>NPC audio playing</td><td>~1.8 to 2.4 s</td></tr></tbody></table></div>
 <p>Roughly two seconds from your voice to the character's voice. That's the number we guard most jealously, and it will look very different on a Steam Deck. More on that in an upcoming post: we're writing a dedicated performance doc for the Deck, which is our practical minimum spec.</p>
 <h2>Speech recognition: 100 transcriptions, one trick</h2>
 <p>The STT harness runs 25 game-relevant phrases (riddle answers, quest lines, small talk) through the exact Whisper model the game ships, in four conditions: clean, quiet mic, room noise, and both at once. Then it runs everything again with one change: a short "vocabulary prompt" that tells Whisper the names it's likely to hear, like Morrin, Alder, the Wisp.</p>
-<p>| Condition | Without prompt | With vocab prompt | |---|---|---| | Clean | 7.5% word error rate | 4.0% | | Quiet mic | 7.5% | 4.0% | | Room noise | 8.0% | 4.0% | | Quiet and noisy | 12.3% | 4.0% |</p>
+<div class="tablewrap"><table><thead><tr><th>Condition</th><th>Without prompt</th><th>With vocab prompt</th></tr></thead><tbody><tr><td>Clean</td><td>7.5% word error rate</td><td>4.0%</td></tr><tr><td>Quiet mic</td><td>7.5%</td><td>4.0%</td></tr><tr><td>Room noise</td><td>8.0%</td><td>4.0%</td></tr><tr><td>Quiet and noisy</td><td>12.3%</td><td>4.0%</td></tr></tbody></table></div>
 <p>One line of context halves the error rate and makes it flat across noise conditions. The remaining errors are almost endearing: every single run heard "what is Eruin" as "What is a ruin?", which, given the state of the kingdom, is honestly a fair question.</p>
 <h2>Memory retrieval: why we switched embedders</h2>
 <p>When you ask Alder about the city gate, the game retrieves relevant lore from an embedded knowledge base. We originally reused the dialogue model itself to embed those lookups (one less model to ship), and our retrieval eval shows exactly what that cost. Twenty labeled player questions, scored on whether the right lore file comes back first:</p>
-<p>| Embedder | Correct on first hit | Correct in top 3 | |---|---|---| | Dialogue model, high tier | 11/20 | 16/20 | | Dialogue model, low tier | 8/20 | 18/20 | | Dialogue model, min tier | 5/20 | 15/20 | | bge-small (dedicated, what we ship now) | 19/20 | 20/20 |</p>
+<div class="tablewrap"><table><thead><tr><th>Embedder</th><th>Correct on first hit</th><th>Correct in top 3</th></tr></thead><tbody><tr><td>Dialogue model, high tier</td><td>11/20</td><td>16/20</td></tr><tr><td>Dialogue model, low tier</td><td>8/20</td><td>18/20</td></tr><tr><td>Dialogue model, min tier</td><td>5/20</td><td>15/20</td></tr><tr><td>bge-small (dedicated, what we ship now)</td><td>19/20</td><td>20/20</td></tr></tbody></table></div>
 <p>A chat model was never trained to measure sentence similarity, and it shows. The dedicated embedding model is 130 MB, and it simply knows that "who lives deep in the woods?" means the witch, not the history of the Long Night.</p>
 <h2>The quest judge: keeping an eager model honest</h2>
 <p>The stealth-critical piece: when an NPC offers you a quest, a tiny classifier reads your reply and decides, YES or NO, whether you actually accepted. Without it, smaller models would start the quest when you say "that sounds rough, anyway I have to go."</p>

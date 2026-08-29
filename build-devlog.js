@@ -23,7 +23,8 @@
  *
  * Markdown supported: # headings, paragraphs, **bold**, *italic*, `code`,
  * fenced ``` code blocks (with language label), [links](url), ![images](src),
- * > blockquotes, - / 1. lists, --- rune dividers. Raw HTML passes through.
+ * > blockquotes, - / 1. lists, | pipe | tables |, --- rune dividers.
+ * Raw HTML passes through.
  */
 
 const fs = require('fs');
@@ -108,7 +109,7 @@ function mdToHtml(md) {
   });
 
   const isBlockStart = s =>
-    /^(#{1,6}\s|>|[-*]\s|\d+\.\s|<|\x00F\d+\x00$)/.test(s) || /^(-{3,}|\*{3,})$/.test(s);
+    /^(#{1,6}\s|>|[-*]\s|\d+\.\s|<|\||\x00F\d+\x00$)/.test(s) || /^(-{3,}|\*{3,})$/.test(s);
 
   const lines = md.split(/\r?\n/);
   const out = [];
@@ -144,6 +145,19 @@ function mdToHtml(md) {
         i++;
       }
       out.push(`<blockquote>${inline(q.join(' '))}</blockquote>`);
+      continue;
+    }
+
+    if (t.startsWith('|') && i + 1 < lines.length && /^\|[\s:|-]+\|$/.test(lines[i + 1].trim())) {
+      const parseRow = s => s.replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => c.trim());
+      const header = parseRow(t).map(h => `<th>${inline(h)}</th>`).join('');
+      i += 2; // skip header + separator row
+      const rows = [];
+      while (i < lines.length && lines[i].trim().startsWith('|')) {
+        rows.push(`<tr>${parseRow(lines[i].trim()).map(c => `<td>${inline(c)}</td>`).join('')}</tr>`);
+        i++;
+      }
+      out.push(`<div class="tablewrap"><table><thead><tr>${header}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`);
       continue;
     }
 
@@ -387,6 +401,22 @@ article code { font-family: 'Consolas', 'Menlo', monospace; font-size: .86em;
 .codebox pre { padding: 1.4rem 1.3rem; overflow-x: auto; }
 .codebox code { font-family: 'Consolas', 'Menlo', monospace; font-size: .88rem; line-height: 1.65;
   background: none; border: none; padding: 0; color: #cfc3e8; }
+.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.8rem 0;
+  border: 1px solid rgba(139,92,246,.22); border-radius: 8px;
+  background: linear-gradient(160deg, rgba(24,16,42,.6), rgba(12,8,22,.8));
+  box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+article table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 1rem; line-height: 1.55; }
+article th { font-family: 'Cinzel', serif; font-weight: 600; font-size: .68rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent-glow); text-align: left; white-space: nowrap;
+  padding: .85rem 1.1rem; background: rgba(224,178,74,.06); border-bottom: 1px solid rgba(224,178,74,.3); }
+article td { padding: .75rem 1.1rem; vertical-align: top; color: rgba(224,215,242,.85);
+  border-bottom: 1px solid rgba(139,92,246,.12); }
+article td:first-child { color: var(--moonlight); }
+article tbody tr:last-child td { border-bottom: none; }
+@media (max-width: 640px) {
+  article table { font-size: .92rem; }
+  article th, article td { padding: .6rem .8rem; }
+}
 .pager { max-width: 720px; margin: 0 auto; padding: 0 clamp(1.2rem, 4vw, 2rem) 3rem;
   display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
 .pager-link { display: flex; flex-direction: column; gap: .4rem; max-width: 46%; }
