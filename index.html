@@ -58,7 +58,7 @@
 <script defer src="/_vercel/insights/script.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -89,13 +89,6 @@ a { color: var(--accent-glow); text-decoration: none; }
 a:hover { color: #fff; }
 ::selection { background: rgba(224,178,74,.3); color: #fff; }
 
-/* ═══ GRAIN ═══ */
-.grain {
-  position: fixed; inset: 0; z-index: 60; pointer-events: none;
-  mix-blend-mode: overlay; opacity: .07;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%22.9%22 numOctaves=%222%22/></filter><rect width=%22120%22 height=%22120%22 filter=%22url(%23n)%22/></svg>');
-}
-
 /* ═══ NAV ═══ */
 #navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
@@ -105,16 +98,13 @@ a:hover { color: #fff; }
   transition: background .4s ease, padding .4s ease;
 }
 #navbar.scrolled {
-  background: rgba(11,6,17,.82);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(11,6,17,.85);
   border-bottom: 1px solid rgba(139,92,246,.12);
   padding: .75rem clamp(1.2rem, 4vw, 2.6rem);
 }
 .nav-wordmark {
-  font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 1.35rem; letter-spacing: .22em;
-  background: linear-gradient(180deg, #f6d073, #c9902f);
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  font-family: 'Cinzel', serif; font-weight: 600; font-size: 1.35rem; letter-spacing: .22em;
+  color: var(--accent);
 }
 .nav-right { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2.1rem); flex-wrap: wrap; }
 .nav-link {
@@ -127,10 +117,10 @@ a:hover { color: #fff; }
   font-family: 'Cinzel', serif; font-size: .72rem; font-weight: 600;
   letter-spacing: .16em; text-transform: uppercase; color: #1a1208;
   padding: .55rem 1.15rem; border-radius: 3px;
-  background: linear-gradient(135deg, var(--accent-glow), var(--accent));
-  box-shadow: 0 4px 18px rgba(224,178,74,.28);
+  background: var(--accent);
+  transition: filter .3s ease;
 }
-.nav-cta:hover { color: #1a1208; filter: brightness(1.06); }
+.nav-cta:hover { color: #1a1208; filter: brightness(1.08); }
 
 /* ═══ HERO ═══ */
 .hero {
@@ -146,51 +136,22 @@ a:hover { color: #fff; }
 }
 .hero-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 120% 90% at 50% 42%, transparent 34%, rgba(11,6,17,.55) 72%, rgba(11,6,17,.95) 100%); }
 .hero-fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,6,17,.62) 0%, transparent 26%, transparent 55%, rgba(11,6,17,.9) 100%); }
-.fog {
-  position: absolute; left: -10%; right: -10%; top: 30%; bottom: -10%;
-  background:
-    radial-gradient(ellipse 60% 50% at 30% 60%, rgba(139,92,246,.16), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 72% 50%, rgba(224,178,74,.08), transparent 65%);
-  filter: blur(20px);
-  animation: fogDrift 26s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-@keyframes fogDrift { 0% { transform: translateX(-6%) translateY(0); } 100% { transform: translateX(6%) translateY(-3%); } }
-
-.particles { position: absolute; inset: 0; pointer-events: none; }
-.particle {
-  position: absolute; border-radius: 50%;
-  background: var(--accent-glow);
-  box-shadow: 0 0 6px var(--accent-glow), 0 0 12px rgba(139,92,246,.4);
-  opacity: 0;
-  animation: floatUp var(--dur) ease-in-out var(--delay) infinite;
-}
-@keyframes floatUp {
-  0% { transform: translateY(105vh) scale(0); opacity: 0; }
-  12% { opacity: .85; }
-  88% { opacity: .85; }
-  100% { transform: translateY(-15vh) scale(1); opacity: 0; }
-}
-
 .hero-content { position: relative; z-index: 3; }
 .hero-kicker {
   font-family: 'Cinzel', serif; font-size: clamp(.62rem, 1.6vw, .8rem); font-weight: 600;
-  letter-spacing: .5em; text-transform: uppercase; color: var(--accent-glow);
+  letter-spacing: .24em; text-transform: uppercase; color: var(--accent-glow);
   margin-bottom: 1.6rem;
   opacity: 0; animation: fadeUp 1.4s ease-out .3s both;
 }
 .logo-img {
   display: block; margin: 0 auto; width: clamp(300px, 46vw, 600px); height: auto;
   filter: drop-shadow(0 0 40px rgba(224,178,74,.35)) drop-shadow(0 6px 14px rgba(0,0,0,.6));
-  animation: titleReveal 1.9s cubic-bezier(.2,.7,.2,1) both;
+  animation: logoFade .8s ease-out both;
 }
-@keyframes titleReveal {
-  0% { opacity: 0; transform: translateY(34px) scale(.94); filter: blur(6px); }
-  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-}
+@keyframes logoFade { from { opacity: 0; } to { opacity: 1; } }
 .tagline {
   font-family: 'Cinzel', serif; font-weight: 400;
-  font-size: clamp(1rem, 2.4vw, 1.55rem); letter-spacing: .28em; text-transform: uppercase;
+  font-size: clamp(1rem, 2.4vw, 1.55rem); letter-spacing: .24em; text-transform: uppercase;
   color: #e4d9f2; text-shadow: 0 2px 20px rgba(0,0,0,.7);
   margin-top: 1.5rem;
   opacity: 0; animation: fadeUp 1.5s ease-out .8s both;
@@ -213,11 +174,10 @@ a:hover { color: #fff; }
   font-family: 'Cinzel', serif; font-size: .95rem; font-weight: 600;
   letter-spacing: .13em; text-transform: uppercase; color: #1a1208;
   border-radius: 3px;
-  background: linear-gradient(135deg, var(--accent-glow), var(--accent));
-  box-shadow: 0 8px 34px rgba(224,178,74,.34);
-  transition: transform .35s ease, box-shadow .35s ease;
+  background: var(--accent);
+  transition: filter .3s ease;
 }
-.btn-gold:hover { color: #1a1208; transform: translateY(-2px); box-shadow: 0 12px 44px rgba(224,178,74,.5); }
+.btn-gold:hover { color: #1a1208; filter: brightness(1.08); }
 .btn-gold svg { width: 20px; height: 20px; }
 
 .btn-ghost {
@@ -226,45 +186,22 @@ a:hover { color: #fff; }
   font-family: 'Cinzel', serif; font-size: .95rem; font-weight: 600;
   letter-spacing: .13em; text-transform: uppercase; color: #e4d9f2;
   border-radius: 3px;
-  background: rgba(20,14,32,.5);
+  background: rgba(11,6,17,.85);
   border: 1px solid rgba(208,196,224,.25);
-  backdrop-filter: blur(6px);
-  transition: all .35s ease;
+  transition: border-color .35s ease, color .35s ease;
 }
-.btn-ghost:hover { color: #e4d9f2; border-color: var(--accent-glow); background: rgba(20,14,32,.7); }
+.btn-ghost:hover { color: #e4d9f2; border-color: var(--accent-glow); }
 .btn-ghost svg { width: 16px; height: 16px; }
-
-.scroll-hint { position: absolute; bottom: 2.2rem; left: 50%; transform: translateX(-50%); z-index: 3; opacity: 0; animation: fadeUp 1.5s ease-out 2s both; }
-.scroll-hint-inner { width: 24px; height: 40px; border: 2px solid rgba(208,196,224,.32); border-radius: 12px; position: relative; }
-.scroll-hint-inner::after {
-  content: ''; position: absolute; top: 6px; left: 50%; width: 4px; height: 8px;
-  background: var(--accent-glow); border-radius: 2px; transform: translateX(-50%);
-  animation: scrollDot 2s ease-in-out infinite;
-}
-@keyframes scrollDot {
-  0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
-  50% { opacity: .3; transform: translateX(-50%) translateY(13px); }
-}
 
 /* ═══ SHARED ═══ */
 section { position: relative; }
-.eyebrow {
-  font-family: 'Cinzel', serif; font-size: .75rem; font-weight: 600;
-  letter-spacing: .42em; text-transform: uppercase; color: var(--accent);
-  margin-bottom: 1rem;
-}
 .display {
-  font-family: 'Cinzel Decorative', serif; font-weight: 700; line-height: 1.2;
+  font-family: 'Cinzel', serif; font-weight: 600; line-height: 1.2;
   background: linear-gradient(180deg, #ede4f8, #c9b8e0);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
-.rune-row { display: flex; align-items: center; justify-content: center; gap: 1.2rem; }
-.rune-line { height: 1px; flex: 1; max-width: 120px; }
-.rune-line.l { background: linear-gradient(90deg, transparent, rgba(224,178,74,.4)); }
-.rune-line.r { background: linear-gradient(90deg, rgba(224,178,74,.4), transparent); }
-.rune-diamond { width: 8px; height: 8px; background: var(--accent); transform: rotate(45deg); box-shadow: 0 0 10px var(--accent-glow); }
 
-.reveal { opacity: 0; transform: translateY(34px); transition: opacity .9s ease, transform .9s ease; }
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ═══ PITCH ═══ */
@@ -280,7 +217,7 @@ section { position: relative; }
 }
 .pitch-inner { position: relative; max-width: 960px; margin: 0 auto; }
 .pitch h2 {
-  font-family: 'Cinzel Decorative', serif; font-weight: 700;
+  font-family: 'Cinzel', serif; font-weight: 600;
   font-size: clamp(1.9rem, 5.4vw, 3.7rem); line-height: 1.22;
   background: linear-gradient(180deg, #fff, #c9b8e0);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
@@ -291,8 +228,6 @@ section { position: relative; }
   color: rgba(208,196,224,.82); font-style: italic;
 }
 .pitch .hl { color: var(--accent-glow); font-style: normal; }
-.pitch .rune-row { margin-bottom: 2rem; }
-.pitch .rune-line { width: 60px; flex: none; }
 
 /* ═══ LIVING DIALOGUE ═══ */
 .living {
@@ -307,9 +242,6 @@ section { position: relative; }
 .living h2 { font-size: clamp(2rem, 4.4vw, 3.1rem); margin-bottom: 1.6rem; }
 .living .body-p { font-size: 1.18rem; line-height: 1.85; color: rgba(208,196,224,.82); margin-bottom: 1.3rem; }
 .living .body-p .hl { color: var(--accent-glow); }
-.living-stats { display: flex; gap: 2.2rem; flex-wrap: wrap; margin-top: .9rem; }
-.stat-num { font-family: 'Cinzel Decorative', serif; font-size: 1.9rem; color: var(--accent-glow); }
-.stat-label { font-family: 'Cinzel', serif; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(208,196,224,.55); margin-top: .3rem; }
 
 .convo {
   position: relative; border-radius: 8px; overflow: hidden;
@@ -326,12 +258,9 @@ section { position: relative; }
 .avatar {
   width: 44px; height: 44px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Cinzel Decorative', serif; font-size: 1.2rem; color: #1a1208;
+  font-family: 'Cinzel', serif; font-weight: 600; font-size: 1.2rem; color: #1a1208;
   background: linear-gradient(135deg, var(--accent-glow), var(--accent));
-  box-shadow: 0 0 18px rgba(224,178,74,.4);
-  animation: runePulse 4s ease-in-out infinite;
 }
-@keyframes runePulse { 0%, 100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
 .convo-name { font-family: 'Cinzel', serif; font-weight: 600; font-size: .95rem; letter-spacing: .06em; color: var(--moonlight); }
 .convo-role { font-family: 'Cinzel', serif; font-size: .66rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(208,196,224,.5); }
 .convo-status {
@@ -358,17 +287,13 @@ section { position: relative; }
 .you-tag { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(224,178,74,.7); margin-left: auto; }
 .you-text { font-size: 1.02rem; line-height: 1.55; color: #f3ecd6; font-style: italic; }
 .wavebars { display: flex; align-items: center; gap: 3px; height: 16px; }
-.wavebars span {
-  width: 3px; height: 100%; background: var(--accent-glow); border-radius: 2px;
-  transform-origin: center; animation: wave 1s ease-in-out infinite;
-}
-@keyframes wave { 0%, 100% { transform: scaleY(.35); } 50% { transform: scaleY(1); } }
-.wavebars span:nth-child(1) { animation-delay: 0s; }
-.wavebars span:nth-child(2) { animation-delay: .15s; }
-.wavebars span:nth-child(3) { animation-delay: .3s; }
-.wavebars span:nth-child(4) { animation-delay: .45s; }
-.wavebars span:nth-child(5) { animation-delay: .2s; }
-.wavebars span:nth-child(6) { animation-delay: .5s; }
+.wavebars span { width: 3px; background: var(--accent-glow); border-radius: 2px; }
+.wavebars span:nth-child(1) { height: 40%; }
+.wavebars span:nth-child(2) { height: 75%; }
+.wavebars span:nth-child(3) { height: 100%; }
+.wavebars span:nth-child(4) { height: 55%; }
+.wavebars span:nth-child(5) { height: 85%; }
+.wavebars span:nth-child(6) { height: 45%; }
 
 .reacts { padding: 1rem 1.2rem 1.3rem; border-top: 1px solid rgba(139,92,246,.14); background: rgba(11,6,17,.4); }
 .reacts-label { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .24em; text-transform: uppercase; color: rgba(208,196,224,.45); margin-bottom: .75rem; }
@@ -378,12 +303,7 @@ section { position: relative; }
   font-family: 'Cinzel', serif; font-size: .66rem; letter-spacing: .06em; color: var(--accent-glow);
   padding: .4rem .7rem; border: 1px solid rgba(224,178,74,.3); border-radius: 20px;
   background: rgba(224,178,74,.06);
-  animation: chipGlow 3.5s ease-in-out infinite;
 }
-@keyframes chipGlow { 0%, 100% { box-shadow: 0 0 0 rgba(224,178,74,0); } 50% { box-shadow: 0 0 22px rgba(224,178,74,.22); } }
-.chip:nth-child(2) { animation-delay: .6s; }
-.chip:nth-child(3) { animation-delay: 1.2s; }
-.chip:nth-child(4) { animation-delay: 1.8s; }
 .convo-note { text-align: center; font-size: .9rem; font-style: italic; color: rgba(208,196,224,.4); margin-top: 1rem; }
 
 /* ═══ PILLARS ═══ */
@@ -394,39 +314,10 @@ section { position: relative; }
 .pillars-inner { max-width: 1180px; margin: 0 auto; }
 .section-head { text-align: center; max-width: 720px; margin: 0 auto 3.4rem; }
 .section-head h2 { font-size: clamp(2rem, 4.6vw, 3.2rem); }
-.pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-.pillar {
-  position: relative; padding: 2.6rem 2rem; border-radius: 6px;
-  background: linear-gradient(160deg, rgba(34,24,58,.7), rgba(18,12,32,.85));
-  border: 1px solid rgba(139,92,246,.12);
-  overflow: hidden;
-  transition: transform .45s ease, border-color .45s ease, box-shadow .45s ease;
-}
-.pillar:hover { transform: translateY(-6px); border-color: rgba(224,178,74,.35); box-shadow: 0 24px 60px rgba(0,0,0,.4); }
-.pillar::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-}
-.numeral { font-family: 'Cinzel Decorative', serif; font-size: .9rem; color: rgba(224,178,74,.5); letter-spacing: .1em; margin-bottom: 1.2rem; }
-.p-icon { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; color: var(--accent-glow); margin-bottom: 1.4rem; }
-.p-icon svg { width: 40px; height: 40px; }
+.pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(2.5rem, 5vw, 4.5rem); margin: 0 auto; }
+.pillar { padding: 0 .5rem; }
 .pillar h3 { font-family: 'Cinzel', serif; font-weight: 600; font-size: 1.22rem; letter-spacing: .04em; color: var(--moonlight); margin-bottom: .85rem; }
 .pillar p { font-size: 1.05rem; line-height: 1.75; color: rgba(208,196,224,.72); }
-
-/* ═══ LOOP ═══ */
-.loop { padding: 6rem clamp(1.2rem, 4vw, 2.6rem); text-align: center; background: var(--night); }
-.loop h2 { font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: clamp(1.5rem, 3.6vw, 2.4rem); line-height: 1.3; color: var(--moonlight); margin-bottom: 3rem; }
-.loop-row { display: flex; align-items: stretch; justify-content: center; gap: .6rem; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
-.loop-step {
-  flex: 1; min-width: 180px; max-width: 240px;
-  padding: 1.6rem 1.1rem; border-radius: 6px;
-  background: rgba(30,20,54,.5); border: 1px solid rgba(139,92,246,.15);
-}
-.loop-step.gold { background: rgba(224,178,74,.08); border-color: rgba(224,178,74,.28); }
-.loop-step .k { font-family: 'Cinzel', serif; font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: .6rem; }
-.loop-step .v { font-family: 'Cinzel', serif; font-weight: 600; font-size: 1.05rem; color: var(--moonlight); }
-.loop-step.gold .v { color: #f3ecd6; }
-.loop-arrow { display: flex; align-items: center; color: var(--accent-glow); font-size: 1.4rem; }
 
 /* ═══ FAILURE ═══ */
 .fail {
@@ -508,7 +399,7 @@ section { position: relative; }
   font-size: clamp(1.4rem, 3.2vw, 2.1rem); line-height: 1.7; color: #e4d9f2;
   margin: 2.5rem 0;
 }
-.lore-attr { font-family: 'Cinzel', serif; font-size: .82rem; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; }
+.lore-attr { font-family: 'Cinzel', serif; font-size: .82rem; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); }
 
 /* ═══ CTA ═══ */
 .cta {
@@ -529,9 +420,8 @@ section { position: relative; }
 /* ═══ FOOTER ═══ */
 footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-align: center; background: var(--night); }
 .footer-logo {
-  font-family: 'Cinzel Decorative', serif; font-size: 1.6rem; font-weight: 700; letter-spacing: .18em;
-  background: linear-gradient(180deg, #f6d073, #c9902f);
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 600; letter-spacing: .18em;
+  color: var(--accent);
   margin-bottom: 1.2rem;
 }
 .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.4rem; }
@@ -547,19 +437,24 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
   .living, .pillars, .trailer, .world, .lore, .cta, .fail { padding-top: 5rem; padding-bottom: 5rem; }
   .shots-grid { grid-template-columns: 1fr; }
   .shot.wide { grid-column: auto; aspect-ratio: 16/9; }
+  .pillars-grid { grid-template-columns: 1fr; max-width: 560px; }
 }
 @media (max-width: 780px) {
   .nav-links { display: none; }
 }
 @media (max-width: 640px) {
-  .loop-arrow { display: none; }
   .cta-buttons { flex-direction: column; align-items: center; }
+}
+
+/* ═══ REDUCED MOTION ═══ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .logo-img, .hero-kicker, .tagline, .hero-sub, .hero-cta, .reveal { opacity: 1; transform: none; }
 }
 </style>
 </head>
 <body>
-
-<div class="grain"></div>
 
 <!-- ═══ NAV ═══ -->
 <nav id="navbar">
@@ -581,8 +476,6 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
   <div class="hero-img"></div>
   <div class="hero-vignette"></div>
   <div class="hero-fade"></div>
-  <div class="fog"></div>
-  <div class="particles" id="particles"></div>
 
   <div class="hero-content">
     <div class="hero-kicker">A Voice-First Fantasy Mystery &middot; The Spell Left You Only Your Voice</div>
@@ -600,14 +493,11 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
       </a>
     </div>
   </div>
-
-  <div class="scroll-hint"><div class="scroll-hint-inner"></div></div>
 </section>
 
 <!-- ═══ TRAILER (front and center, muted autoplay) ═══ -->
 <section class="trailer" id="trailer" style="padding-top:5.5rem;">
   <div class="section-head reveal">
-    <div class="eyebrow">Watch</div>
     <h2 class="display">Official Trailer</h2>
   </div>
   <div class="trailer-box reveal" style="max-width:1100px;">
@@ -619,11 +509,6 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
 <!-- ═══ PITCH ═══ -->
 <section class="pitch">
   <div class="pitch-inner">
-    <div class="rune-row reveal">
-      <span class="rune-line l" style="width:60px;flex:none;"></span>
-      <span class="rune-diamond"></span>
-      <span class="rune-line r" style="width:60px;flex:none;"></span>
-    </div>
     <h2 class="reveal">A spell took every memory in town. Yours included.</h2>
     <p class="reveal">No name, no past, no explanation. Only a walled town of strangers who <span class="hl">seem to know you</span>. Ask the right questions, and the past starts answering back.</p>
   </div>
@@ -633,15 +518,9 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
 <section class="living" id="living">
   <div class="living-grid">
     <div>
-      <div class="eyebrow reveal">Speak, Don't Select</div>
       <h2 class="display reveal">Characters that listen,<br>remember, and talk back</h2>
       <p class="body-p reveal">Talk with your real voice or type, in your own words. No dialogue wheel, no picking from a list. Key characters understand what you actually say, each with their own personality, knowledge, and memory of you. In a town that has forgotten everything, <span class="hl">they remember you</span>.</p>
-      <p class="body-p reveal" style="margin-bottom:2.2rem;">And conversations stay in the world. Nothing pauses: move around, interrupt, hesitate, or walk away mid-sentence, and characters can react to that. Promises, contradictions, how you treat them: what you say shapes relationships, quest progress, and what comes next.</p>
-      <div class="living-stats reveal">
-        <div><div class="stat-num">Local</div><div class="stat-label">AI runs on your machine</div></div>
-        <div><div class="stat-num">Voice</div><div class="stat-label">Speak or type your words</div></div>
-        <div><div class="stat-num">Live</div><div class="stat-label">Dialogue never pauses the world</div></div>
-      </div>
+      <p class="body-p reveal">And conversations stay in the world. Nothing pauses: move around, interrupt, hesitate, or walk away mid-sentence, and characters can react to that. Promises, contradictions, how you treat them: what you say shapes relationships, quest progress, and what comes next.</p>
     </div>
 
     <div class="reveal">
@@ -683,71 +562,22 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
 <section class="pillars" id="pillars">
   <div class="pillars-inner">
     <div class="section-head reveal">
-      <div class="eyebrow">Core Pillars</div>
       <h2 class="display">What makes Eruin different</h2>
     </div>
     <div class="pillars-grid">
       <div class="pillar reveal">
-        <div class="numeral">I</div>
-        <div class="p-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-        </div>
         <h3>Speak, Don't Select</h3>
         <p>Talk naturally using your microphone, or type if you prefer. Characters understand your own words, with no dialogue wheel forcing your hand.</p>
       </div>
       <div class="pillar reveal">
-        <div class="numeral">II</div>
-        <div class="p-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5 9 2 12 5 15"/><polyline points="9 5 12 2 15 5"/><polyline points="15 19 12 22 9 19"/><polyline points="19 9 22 12 19 15"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
-        </div>
-        <h3>Conversations Stay in the World</h3>
-        <p>Dialogue never locks you into a menu. Move around, interrupt, hesitate, or simply walk away while someone is talking, and characters can react to that.</p>
-      </div>
-      <div class="pillar reveal">
-        <div class="numeral">III</div>
-        <div class="p-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
-        </div>
         <h3>Your Words Have Consequences</h3>
         <p>Characters remember important interactions: promises, contradictions, how you treated them. What you say shapes relationships, quest progress, and what doors open for you.</p>
       </div>
       <div class="pillar reveal">
-        <div class="numeral">IV</div>
-        <div class="p-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
-        </div>
-        <h3>Restore What Was Forgotten</h3>
-        <p>The town has lost its memories. Question its inhabitants, notice what doesn't add up, and recover fragments of the past to understand the spell, and your own connection to the kingdom.</p>
-      </div>
-      <div class="pillar reveal">
-        <div class="numeral">V</div>
-        <div class="p-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <h3>Handcrafted Story, Living Dialogue</h3>
-        <p>The world, characters, mystery, trials, and consequences are authored by hand. Local AI lets key characters understand your words and respond within the designed story.</p>
-      </div>
-      <div class="pillar reveal">
-        <div class="numeral">VI</div>
-        <div class="p-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
         <h3>Private and Local</h3>
         <p>Speech recognition, AI dialogue, and character voices run locally on your computer. No cloud processing, no account, no subscription.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ═══ LOOP ═══ -->
-<section class="loop">
-  <h2 class="reveal">One conversation. A chain of consequence.</h2>
-  <div class="loop-row reveal">
-    <div class="loop-step"><div class="k">Step One</div><div class="v">You speak in your own words</div></div>
-    <div class="loop-arrow">→</div>
-    <div class="loop-step"><div class="k">Step Two</div><div class="v">The character understands &amp; remembers</div></div>
-    <div class="loop-arrow">→</div>
-    <div class="loop-step gold"><div class="k">Step Three</div><div class="v">Relationships &amp; quests move forward</div></div>
   </div>
 </section>
 
@@ -758,7 +588,6 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
       <img src="lake.webp" alt="The player stands at the edge of a dark lake beneath a storm-lit purple sky" width="2557" height="1393" loading="lazy" decoding="async">
     </div>
     <div>
-      <div class="eyebrow reveal">No Dead Ends</div>
       <h2 class="display reveal" style="font-size:clamp(2rem,4.4vw,3.1rem);margin-bottom:1.6rem;">Failure is still gameplay</h2>
       <p class="body-p reveal" style="font-size:1.18rem;line-height:1.85;color:rgba(208,196,224,.82);margin-bottom:1.3rem;">Fail Morrin's trial and she may turn you into a frog. That is not a game over. It is the beginning of another playable sequence, down at the lake below her woods.</p>
       <p class="body-p reveal" style="font-size:1.18rem;line-height:1.85;color:rgba(208,196,224,.82);">When you find your way back, you can try a different approach. In Eruin, a conversation gone wrong changes the adventure instead of ending it.</p>
@@ -770,7 +599,6 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
 <section class="world" id="world">
   <div class="world-inner">
     <div class="section-head reveal">
-      <div class="eyebrow">From the World</div>
       <h2 class="display">Glimpses of Eruin</h2>
     </div>
     <div class="shots-grid">
@@ -805,25 +633,14 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
 <!-- ═══ LORE ═══ -->
 <section class="lore">
   <div class="lore-inner reveal">
-    <div class="rune-row">
-      <span class="rune-line l"></span>
-      <span class="rune-diamond"></span>
-      <span class="rune-line r"></span>
-    </div>
     <blockquote>Forgive me, stranger. I cannot tell you my own mother's name, let alone yours. And yet your face... I feel I ought to know it.</blockquote>
     <p class="lore-attr">Alder, Keeper of the Gate</p>
-    <div class="rune-row">
-      <span class="rune-line l"></span>
-      <span class="rune-diamond"></span>
-      <span class="rune-line r"></span>
-    </div>
   </div>
 </section>
 
 <!-- ═══ CTA ═══ -->
 <section class="cta">
   <div class="cta-inner reveal">
-    <div class="eyebrow">Coming to Steam</div>
     <h2 class="display">Join the Journey</h2>
     <p class="cta-sub">A playable demo is coming soon. Wishlist Eruin on Steam to be summoned the moment it goes live.</p>
     <div class="steam-widget">
@@ -854,26 +671,12 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
 </footer>
 
 <script>
-// Floating particles
-const particlesEl = document.getElementById('particles');
-for (let i = 0; i < 16; i++) {
-  const p = document.createElement('div');
-  p.className = 'particle';
-  const size = (2 + Math.random() * 3).toFixed(1) + 'px';
-  p.style.width = size;
-  p.style.height = size;
-  p.style.left = (Math.random() * 100) + '%';
-  p.style.setProperty('--dur', (9 + Math.random() * 12) + 's');
-  p.style.setProperty('--delay', (Math.random() * 10) + 's');
-  particlesEl.appendChild(p);
-}
-
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 90);
+      entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
   });
