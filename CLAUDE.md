@@ -11,4 +11,4 @@ To publish a post:
 2. Run `node build-devlog.js` — regenerates `devlog/<slug>/index.html`, `devlog/index.html`, `devlog/feed.xml`, and the devlog entries in `sitemap.xml`
 3. Commit both the markdown source and the generated files
 
-Generated devlog HTML is never edited by hand; page templates and the shared devlog CSS live inside `build-devlog.js`. The main page's look (fonts, colors, grain, rune dividers) is mirrored there — if the landing page theme changes, update `SHARED_CSS` in the script too.
+Generated devlog HTML is never edited by hand; page templates and the shared devlog CSS live inside `build-devlog.js`. The main page's look (fonts, colors, nav, buttons) is mirrored there — if the landing page theme changes, update `SHARED_CSS` in the script too.
