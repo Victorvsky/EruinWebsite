@@ -136,6 +136,21 @@ a:hover { color: #fff; }
 }
 .hero-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 120% 90% at 50% 42%, transparent 34%, rgba(11,6,17,.55) 72%, rgba(11,6,17,.95) 100%); }
 .hero-fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,6,17,.62) 0%, transparent 26%, transparent 55%, rgba(11,6,17,.9) 100%); }
+.particles { position: absolute; inset: 0; pointer-events: none; }
+.particle {
+  position: absolute; border-radius: 50%;
+  background: var(--accent-glow);
+  box-shadow: 0 0 6px var(--accent-glow), 0 0 12px rgba(139,92,246,.4);
+  opacity: 0;
+  animation: floatUp var(--dur) ease-in-out var(--delay) infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(105vh) scale(0); opacity: 0; }
+  12% { opacity: .85; }
+  88% { opacity: .85; }
+  100% { transform: translateY(-15vh) scale(1); opacity: 0; }
+}
+
 .hero-content { position: relative; z-index: 3; }
 .hero-kicker {
   font-family: 'Cinzel', serif; font-size: clamp(.62rem, 1.6vw, .8rem); font-weight: 600;
@@ -476,6 +491,7 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
   <div class="hero-img"></div>
   <div class="hero-vignette"></div>
   <div class="hero-fade"></div>
+  <div class="particles" id="particles"></div>
 
   <div class="hero-content">
     <div class="hero-kicker">A Voice-First Fantasy Mystery &middot; The Spell Left You Only Your Voice</div>
@@ -671,6 +687,20 @@ footer { border-top: 1px solid rgba(139,92,246,.1); padding: 3.4rem 2rem; text-a
 </footer>
 
 <script>
+// Floating particles
+const particlesEl = document.getElementById('particles');
+for (let i = 0; i < 16; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  const size = (2 + Math.random() * 3).toFixed(1) + 'px';
+  p.style.width = size;
+  p.style.height = size;
+  p.style.left = (Math.random() * 100) + '%';
+  p.style.setProperty('--dur', (9 + Math.random() * 12) + 's');
+  p.style.setProperty('--delay', (Math.random() * 10) + 's');
+  particlesEl.appendChild(p);
+}
+
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
