@@ -1,0 +1,51 @@
+ERUIN — PRESS FACT SHEET
+Updated: 20 September 2026
+
+Developer / publisher: VeilstoneGames
+Platform: PC (Windows)
+Genre: Fantasy mystery RPG
+Players: Single-player
+Release date: To be announced
+Input: Voice or text
+Language: English
+Engine: Unreal Engine 5
+
+Website: https://www.eruin.dev/
+Press kit: https://www.eruin.dev/presskit/
+Steam: https://store.steampowered.com/app/4695190/Eruin/
+Official trailer: https://www.youtube.com/watch?v=j_fi0zAIjtk
+Development updates: https://www.eruin.dev/devlog/
+Press contact (Discord): https://discord.gg/JYqdYUT4u7
+
+SHORT DESCRIPTION
+Eruin is a single-player fantasy mystery RPG where you speak to characters in your own words. Wake in a kingdom that has forgotten itself, uncover fragments of its past, and navigate conversations that change what happens next. Speech recognition, dialogue, and character voices run locally on your PC.
+
+ABOUT THE GAME
+Under a night that never ends, you wake without a name or a past. A guiding light leads you into a world of strangers with missing memories. The man at the town gate needs help. A witch has a bargain to offer. The questions you choose to ask become part of the adventure.
+
+Eruin pairs an authored world, mystery, and quests with locally generated NPC dialogue. Speak through your microphone or type a reply: key characters respond in their own voices, remember important interactions, and react to the meaning of your words.
+
+KEY FEATURES
+- Speak or type your own words instead of choosing from a dialogue wheel.
+- Conversations affect quests and relationships; a witch's failed riddle can turn you into a frog.
+- Uncover authored memory fragments and explore a kingdom that has forgotten its story.
+- Speech recognition, dialogue, and character voices run locally. No cloud account or subscription is required to play.
+
+STATUS
+Eruin is in development. Media shows a development build. Consult the Steam page for current availability and system requirements.
+
+MEDIA CONTENTS
+screenshots/eruin-traveler.webp — The traveler by the town gate (2560 x 1440)
+screenshots/eruin-witch.webp — The witch at her cauldron (2560 x 1440)
+screenshots/eruin-old-tree.webp — The old tree and the Wisp (2560 x 1440)
+screenshots/eruin-wisp.webp — Waking with the guiding light (2560 x 1440)
+screenshots/eruin-lantern-towers.webp — Lanterns along the wall (2556 x 1389)
+screenshots/eruin-text-conversation.webp — Text input during a conversation (2560 x 1440)
+branding/eruin-logo.png — Transparent gold logo (1280 x 720)
+branding/eruin-key-art.png — Wide promotional artwork, not a gameplay screenshot (3840 x 1240)
+
+CREDITS
+These materials are provided for press and creator coverage of Eruin.
+Please credit Eruin / VeilstoneGames and link to the official website or Steam page.
+Please preserve the logo's proportions and colors.
+© 2026 VeilstoneGames. All rights reserved.
