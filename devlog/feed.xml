@@ -7,6 +7,13 @@
   <description>Tech devlogs from the making of Eruin, a voice-first fantasy mystery RPG powered by local AI.</description>
   <language>en</language>
   <item>
+    <title>Memories of Eruin: Piecing Together a Forgotten World</title>
+    <link>https://www.eruin.dev/devlog/memories-of-eruin/</link>
+    <guid isPermaLink="true">https://www.eruin.dev/devlog/memories-of-eruin/</guid>
+    <pubDate>Sun, 20 Sep 2026 12:00:00 GMT</pubDate>
+    <description>A first look at Memories, names discovered through the story, and a map that keeps the unknown hidden in Eruin's latest development build.</description>
+  </item>
+  <item>
     <title>Testing a Game You Talk To</title>
     <link>https://www.eruin.dev/devlog/testing-a-game-you-talk-to/</link>
     <guid isPermaLink="true">https://www.eruin.dev/devlog/testing-a-game-you-talk-to/</guid>

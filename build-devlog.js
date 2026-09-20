@@ -373,6 +373,10 @@ article a { border-bottom: 1px solid rgba(224,178,74,.35); }
 article a:hover { border-color: #fff; }
 article img { max-width: 100%; border-radius: 8px; border: 1px solid rgba(139,92,246,.16);
   box-shadow: 0 20px 60px rgba(0,0,0,.45); margin: .6rem 0 1.4rem; }
+article figure { margin: 1.8rem 0; }
+article video { display: block; width: 100%; height: auto; border-radius: 8px;
+  border: 1px solid rgba(139,92,246,.16); background: var(--night); }
+article figcaption { margin-top: .7rem; font-size: 1rem; line-height: 1.55; color: var(--silver); }
 article ul, article ol { margin: 0 0 1.4rem 1.4rem; }
 article li { margin-bottom: .55rem; }
 article li::marker { color: var(--accent); }
