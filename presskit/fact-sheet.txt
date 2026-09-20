@@ -15,7 +15,7 @@ Press kit: https://www.eruin.dev/presskit/
 Steam: https://store.steampowered.com/app/4695190/Eruin/
 Official trailer: https://www.youtube.com/watch?v=j_fi0zAIjtk
 Development updates: https://www.eruin.dev/devlog/
-Press contact (Discord): https://discord.gg/JYqdYUT4u7
+Press contact: press@eruin.dev
 
 SHORT DESCRIPTION
 Eruin is a single-player fantasy mystery RPG where you speak to characters in your own words. Wake in a kingdom that has forgotten itself, uncover fragments of its past, and navigate conversations that change what happens next. Speech recognition, dialogue, and character voices run locally on your PC.
