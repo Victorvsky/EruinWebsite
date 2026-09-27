@@ -4,7 +4,7 @@ description: How do you QA a game where every conversation is different? Real nu
 date: 2026-08-29
 tags: testing, voice, local-ai
 cover: /morrin-path.webp
-coverAlt: A torchlit forest path leading toward the witch Morrin's clearing
+coverAlt: A torchlit forest path leading toward the witch's clearing
 slug: testing-a-game-you-talk-to
 ---
 
@@ -40,8 +40,8 @@ is our practical minimum spec.
 The STT harness runs 25 game-relevant phrases (riddle answers, quest lines, small
 talk) through the exact Whisper model the game ships, in four conditions: clean,
 quiet mic, room noise, and both at once. Then it runs everything again with one
-change: a short "vocabulary prompt" that tells Whisper the names it's likely to
-hear, like Morrin, Alder, the Wisp.
+change: a short "vocabulary prompt" that tells Whisper the names and terms it's likely to
+hear, such as the Wisp and other vocabulary from the game.
 
 | Condition | Without prompt | With vocab prompt |
 |---|---|---|
@@ -57,7 +57,7 @@ honestly a fair question.
 
 ## Memory retrieval: why we switched embedders
 
-When you ask Alder about the city gate, the game retrieves relevant lore from an
+When you ask the mystery man about the city gate, the game retrieves relevant lore from an
 embedded knowledge base. We originally reused the dialogue model itself to embed
 those lookups (one less model to ship), and our retrieval eval shows exactly what
 that cost. Twenty labeled player questions, scored on whether the right lore file
@@ -92,7 +92,7 @@ playtesting.
 The deterministic layers around all of this, response parsing, vocal-action
 extraction, knowledge lookup and injection, quest-action schemas, sit at **27/27**
 unit tests green, and the quest state machine's own editor test suite
-(`Eruin.MorrinQuest.*`, riddle data, validation, action gating) is **10/10**.
+(riddle data, validation, action gating) is **10/10**.
 
 ## Then we turned the game on
 
@@ -108,7 +108,7 @@ answer a riddle wrong?" The model decided this meant the riddle game should begi
 and emitted a quest action. In the log, three defenses fired in a row: the quest
 state machine refused the action as invalid in the current state, and the YES/NO
 judge independently rejected it. But a third system, the quest journal, had
-already written "Morrin's Riddle Challenge" into the tracker before the checks
+already written "The Witch's Riddle Challenge" into the tracker before the checks
 ran. One idle question, and the UI claims a witch has challenged you. The state
 machine held, the journal jumped the gun.
 

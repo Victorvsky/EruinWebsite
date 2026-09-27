@@ -25,7 +25,7 @@ Posts will be irregular but honest: real numbers, real dead ends, real fixes.
 
 > Forgive me, stranger. I cannot tell you my own mother's name, let alone yours.
 
-Alder has an excuse for forgetting. We don't, so everything we learn building Eruin ends up here.
+The mystery man has an excuse for forgetting. We don't, so everything we learn building Eruin ends up here.
 
 ---
 
