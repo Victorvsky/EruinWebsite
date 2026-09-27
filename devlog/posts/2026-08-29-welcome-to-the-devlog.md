@@ -29,4 +29,4 @@ The mystery man has an excuse for forgetting. We don't, so everything we learn b
 
 ---
 
-If you'd rather just play the thing: [wishlist Eruin on Steam](https://store.steampowered.com/app/4695190/Eruin/) and the demo will find you the moment it's live. Questions, ideas, or things you want us to write about? Come say hello in the [Discord](https://discord.gg/JYqdYUT4u7).
+If you'd rather just play the thing: [wishlist Eruin on Steam](https://store.steampowered.com/app/4695190/Eruin/?utm_source=eruin_website&utm_medium=referral&utm_campaign=wishlist) and the demo will find you the moment it's live. Questions, ideas, or things you want us to write about? Come say hello in the [Discord](https://discord.gg/JYqdYUT4u7).

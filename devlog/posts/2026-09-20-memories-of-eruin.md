@@ -52,4 +52,4 @@ That lets a conversation find its own wording while keeping the recorded story g
 
 These are features in the current development build as we work toward the demo. Next comes more playtesting of discovery timing and the experience of moving between conversation, Memories and the map.
 
-If you would like to explore the Long Night yourself, [wishlist Eruin on Steam](https://store.steampowered.com/app/4695190/Eruin/).
+If you would like to explore the Long Night yourself, [wishlist Eruin on Steam](https://store.steampowered.com/app/4695190/Eruin/?utm_source=eruin_website&utm_medium=referral&utm_campaign=wishlist).

@@ -272,7 +272,7 @@ function nav(active) {
       <a href="/devlog/" class="nav-link" style="margin-left:2rem;${active === 'devlog' ? 'color:var(--accent-glow);' : ''}">Devlog</a>
       <a href="/presskit/" class="nav-link" style="margin-left:2rem;">Press Kit</a>
     </span>
-    <a href="https://store.steampowered.com/app/4695190/Eruin/" target="_blank" rel="noopener" class="nav-cta">Wishlist</a>
+    <a href="https://store.steampowered.com/app/4695190/Eruin/?utm_source=eruin_website&amp;utm_medium=referral&amp;utm_campaign=wishlist" target="_blank" rel="noopener" class="nav-cta">Wishlist</a>
   </div>
 </nav>`;
 }
@@ -453,7 +453,7 @@ ${pager}
 
 <div class="post-cta">
   <p>Enjoying the journey behind Eruin?</p>
-  <a href="https://store.steampowered.com/app/4695190/Eruin/" target="_blank" rel="noopener" class="btn-gold">Wishlist on Steam</a>
+  <a href="https://store.steampowered.com/app/4695190/Eruin/?utm_source=eruin_website&amp;utm_medium=referral&amp;utm_campaign=wishlist" target="_blank" rel="noopener" class="btn-gold">Wishlist on Steam</a>
 </div>
 
 ${FOOTER}

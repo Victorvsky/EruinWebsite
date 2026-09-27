@@ -127,5 +127,5 @@ measured on a Steam Deck. The doc is already written; the Deck is charging.
 
 ---
 
-If you'd rather just play the thing: [wishlist Eruin on Steam](https://store.steampowered.com/app/4695190/Eruin/).
+If you'd rather just play the thing: [wishlist Eruin on Steam](https://store.steampowered.com/app/4695190/Eruin/?utm_source=eruin_website&utm_medium=referral&utm_campaign=wishlist).
 Questions about the test setup? Ask in the [Discord](https://discord.gg/JYqdYUT4u7).
