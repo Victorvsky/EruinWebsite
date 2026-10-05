@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/admin", "destination": "https://admin.eruin.dev", "permanent": false },
+    { "source": "/admin/:path*", "destination": "https://admin.eruin.dev/:path*", "permanent": false }
+  ]
+}
