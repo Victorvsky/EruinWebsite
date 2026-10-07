@@ -293,9 +293,9 @@ const FOOTER = `<footer>
 const HEAD_COMMON = `<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b0611">
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico?v=e7855e87b7" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon-32x32.png?v=e7855e87b7" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=e7855e87b7">
 <link rel="alternate" type="application/rss+xml" title="Eruin Devlog" href="${SITE}/devlog/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
