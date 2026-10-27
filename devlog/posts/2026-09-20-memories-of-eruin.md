@@ -10,6 +10,8 @@ slug: memories-of-eruin
 
 *Development interface preview. [View the Memories screenshot at full size](/devlog/media/memories-of-eruin/memories-preview.webp).*
 
+*Updated October 27, 2026: the screenshots now show the current build, where Memories and the Map are pages of the new pause menu. More in [Faces in the Long Night](/devlog/faces-in-the-long-night/).*
+
 A man outside the gate knows this is his home. Ask him about it, though, and he cannot name a street or remember which door was his. There is a town behind those walls, and a whole life he cannot reach.
 
 That is the kind of discovery we want you to carry through Eruin. Our latest development build gives those moments a place of their own: **Memories**, a new screen for revisiting the fragments you uncover through conversation.
