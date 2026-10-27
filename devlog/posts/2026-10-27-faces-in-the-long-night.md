@@ -55,7 +55,7 @@ Eruin is set during the Long Night, so fire matters. Lanterns now line the road 
 
 ## Saves, achievements and the Steam Deck
 
-- Saves are about 300 times smaller, and progress is kept per journey.
+- Save files shrank from about 7.5 MB to about 25 KB, so they fit easily in Steam Cloud.
 - Steam achievements are in. Their descriptions avoid naming anyone, so they won't spoil who you meet.
 - We are testing regular builds on the Steam Deck, which uses a smaller language model so conversations still run locally.
 
