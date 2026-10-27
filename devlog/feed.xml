@@ -7,6 +7,13 @@
   <description>Tech devlogs from the making of Eruin, a voice-first fantasy mystery RPG powered by local AI.</description>
   <language>en</language>
   <item>
+    <title>Faces in the Long Night: Character Cards, Quicker Voices and a New Engine</title>
+    <link>https://www.eruin.dev/devlog/faces-in-the-long-night/</link>
+    <guid isPermaLink="true">https://www.eruin.dev/devlog/faces-in-the-long-night/</guid>
+    <pubDate>Tue, 27 Oct 2026 12:00:00 GMT</pubDate>
+    <description>Character cards for the people you meet, replies that start speaking three times sooner, NPCs who remember your name, and a move to Unreal Engine 5.8.</description>
+  </item>
+  <item>
     <title>Memories of Eruin: Piecing Together a Forgotten World</title>
     <link>https://www.eruin.dev/devlog/memories-of-eruin/</link>
     <guid isPermaLink="true">https://www.eruin.dev/devlog/memories-of-eruin/</guid>
