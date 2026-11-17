@@ -13,6 +13,7 @@ Engine: Unreal Engine 5
 Website: https://www.eruin.dev/
 Press kit: https://www.eruin.dev/presskit/
 Steam: https://store.steampowered.com/app/4695190/Eruin/
+Free demo: https://store.steampowered.com/app/5369680/Eruin_Demo/
 Official trailer: https://www.youtube.com/watch?v=j_fi0zAIjtk
 Development updates: https://www.eruin.dev/devlog/
 Press contact: press@eruin.dev
@@ -32,7 +33,7 @@ KEY FEATURES
 - Speech recognition, dialogue, and character voices run locally. No cloud account or subscription is required to play.
 
 STATUS
-Eruin is in development. Media shows a development build. Consult the Steam page for current availability and system requirements.
+Eruin is in development, with a free demo available on Steam. Media shows a development build. Consult the Steam page for current availability and system requirements.
 
 MEDIA CONTENTS
 screenshots/eruin-traveler.webp — The traveler by the town gate (2560 x 1440)
