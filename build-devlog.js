@@ -309,7 +309,7 @@ const HEAD_COMMON = `<meta charset="UTF-8">
 
 function renderPost(post, idx, posts) {
   const url = `${SITE}/devlog/${post.slug}/`;
-  const ogImage = post.cover ? SITE + post.cover : `${SITE}/library_header_920x430_square_corners.png`;
+  const ogImage = post.cover ? SITE + post.cover : `${SITE}/og-image.jpg`;
   const prev = posts[idx + 1]; // posts sorted newest-first
   const next = posts[idx - 1];
 
@@ -504,7 +504,7 @@ ${HEAD_COMMON}
 <meta property="og:site_name" content="Eruin">
 <meta property="og:title" content="Eruin Devlog: Notes from the Workshop">
 <meta property="og:description" content="Tech devlogs from the making of Eruin: voice pipelines, local LLMs, Unreal Engine, and everything in between.">
-<meta property="og:image" content="${SITE}/library_header_920x430_square_corners.png">
+<meta property="og:image" content="${SITE}/og-image.jpg">
 <meta property="og:url" content="${SITE}/devlog/">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
